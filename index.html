@@ -13,8 +13,8 @@
   body{margin:0;font-family:var(--mono)}
   #scene{position:fixed;inset:0;width:100%;height:100%;display:block;color:var(--fg)}
   #scene text{font-family:var(--word);font-weight:300;text-rendering:geometricPrecision}
-  .bar{position:fixed;left:0;right:0;top:0;display:flex;justify-content:center;align-items:center;
-    padding:calc(18px + env(safe-area-inset-top,0px)) 16px 0;
+  .bar{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;align-items:center;
+    padding:0 16px calc(22px + env(safe-area-inset-bottom,0px));
     font-size:11px;letter-spacing:.16em;text-transform:uppercase}
   .seg button{border:0;background:none;color:var(--dim);padding:6px 10px}
   .seg button[aria-pressed="true"]{background:none;color:var(--fg)}
@@ -532,7 +532,7 @@ function updateFig(dt,G){
     }
     case 'fly': {
       const c=Ly.capH, t=fig.t;
-      fig.d+=c*3.1*(1+0.9*Math.exp(-t*5))*dt;               // quick push-off, then an easy glide
+      fig.d+=c*7.5*(1+1.2*Math.exp(-t*6))*dt;               // shot off faster than the word opens, then keeps going
       const S2=fig.path; while(fig.pi<S2.length-2&&S2[fig.pi+1][2]<fig.d) fig.pi++;
       const a=S2[fig.pi], b=S2[Math.min(fig.pi+1,S2.length-1)], k=clamp((fig.d-a[2])/Math.max(1e-6,b[2]-a[2]),0,1);
       const nx=a[0]+(b[0]-a[0])*k, ny=a[1]+(b[1]-a[1])*k;
@@ -609,7 +609,7 @@ function drawFx(dt){
   // dashed arc behind a thrown figure, fading once it comes to rest
   if(!['fly','hop'].includes(fig.mode)) fig.trailA=Math.max(0,fig.trailA-dt*0.9);
   // only a short curved swoosh just behind the flying figure, not the whole path
-  if(fig.mode==='fly'&&P&&fig.t>0.06){
+  if(false){   // no motion trail
     const c=Ly.capH, vx=fig.vx, vy=fig.vy+fig.g*fig.t, n=Math.hypot(vx,vy)||1, dx=vx/n, dy=vy/n, px=-dy, py=dx;
     const h=P.hip, a=[h[0]-dx*0.55*c+px*0.25*c, h[1]-dy*0.55*c+py*0.25*c], b=[a[0]-dx*0.8*c, a[1]-dy*0.8*c];
     const m=[(a[0]+b[0])/2+px*0.12*c,(a[1]+b[1])/2+py*0.12*c];

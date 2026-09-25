@@ -8,7 +8,7 @@ You can also open `index.html` directly in a browser. It is one self-contained f
 
 ## Modes
 
-Switch between the two modes with the labels at the top of the page.
+Switch between the two modes with the labels at the bottom of the page.
 
 - **Determinate**: the squeeze follows progress from 0 to 100%. It plays through on its own and loops.
 - **Indeterminate**: the figure pushes, then takes a break in one of several ways: getting shoved back, leaning its back against the word, doubling over to catch its breath, wiping its brow, or backing up for a run-up. Click anywhere to trigger completion.
