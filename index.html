@@ -1,0 +1,757 @@
+<title>Push Loader</title>
+<style>
+  @font-face{font-family:"BenchNine";font-weight:300;font-style:normal;font-display:block;
+    src:url(data:font/woff2;base64,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) format("woff2");}
+  :root{
+    /* palette from the brief: calm (green-black) → squeezed (orange) → complete (green) */
+    --bg:#071c03;--fg:#e2e9dc;--dim:color-mix(in srgb,var(--fg) 60%,transparent);--line:color-mix(in srgb,var(--fg) 35%,transparent);
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --word:"BenchNine","Arial Narrow","Helvetica Neue",sans-serif;
+    color-scheme:dark;
+  }
+  html,body{height:100%;background:var(--bg);color:var(--fg);overflow:hidden}
+  body{margin:0;font-family:var(--mono)}
+  #scene{position:fixed;inset:0;width:100%;height:100%;display:block;color:var(--fg)}
+  #scene text{font-family:var(--word);font-weight:300;text-rendering:geometricPrecision}
+  .bar{position:fixed;left:0;right:0;top:0;display:flex;justify-content:center;align-items:center;
+    padding:calc(18px + env(safe-area-inset-top,0px)) 16px 0;
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+  .seg button{border:0;background:none;color:var(--dim);padding:6px 10px}
+  .seg button[aria-pressed="true"]{background:none;color:var(--fg)}
+  .seg button:hover{color:var(--fg)}
+  button{font:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--fg);background:transparent;
+    border:1px solid var(--line);padding:8px 12px;border-radius:0;cursor:pointer}
+  button:hover:not(:disabled){border-color:var(--fg)}
+  button:disabled{opacity:.35;cursor:default}
+  button:focus-visible,input:focus-visible{outline:1px solid var(--fg);outline-offset:3px}
+  [hidden]{display:none!important}
+  .seg{display:flex}
+  .slider{display:flex;align-items:center;gap:10px;color:var(--dim)}
+  .slider output{color:var(--fg);font-variant-numeric:tabular-nums;min-width:4ch}
+  input[type=range]{-webkit-appearance:none;appearance:none;width:min(220px,38vw);height:24px;background:transparent;margin:0;cursor:pointer}
+  input[type=range]::-webkit-slider-runnable-track{height:1px;background:var(--line)}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:8px;height:18px;background:var(--fg);border:0;border-radius:0;margin-top:-8.5px}
+  input[type=range]::-moz-range-track{height:1px;background:var(--line)}
+  input[type=range]::-moz-range-thumb{width:8px;height:18px;background:var(--fg);border:0;border-radius:0}
+  input[type=range]:disabled{opacity:.35;cursor:default}
+  .status{color:var(--dim);min-width:11ch;font-variant-numeric:tabular-nums}
+</style>
+
+<svg id="scene" role="img" aria-label="Progress indicator: a figure pushes the word LOADING until it is squeezed small, then it springs open into COMPLETE!">
+  <g id="word" fill="currentColor"></g>
+  <path id="lb" fill="none" stroke="currentColor" stroke-linejoin="miter" visibility="hidden"></path>
+  <path id="rb" fill="none" stroke="currentColor" stroke-linejoin="miter" visibility="hidden"></path>
+  <line id="floor" visibility="hidden" stroke="currentColor" stroke-linecap="round"></line>
+  <g id="fig" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path id="legA"></path>
+    <path id="legB"></path>
+    <path id="torso"></path>
+    <path id="armA"></path>
+    <path id="armB"></path>
+    <circle id="head"></circle>
+  </g>
+  <g id="fx" stroke="currentColor" fill="none" stroke-linecap="round">
+    <path id="trail"></path><path id="confetti" stroke-linejoin="round"></path><path id="strain"></path><path id="motion"></path><path id="dust"></path>
+  </g>
+</svg>
+
+<div class="bar" id="bar">
+  <button id="replay" type="button" hidden>Replay</button>
+  <div class="seg" role="group" aria-label="Mode">
+    <button id="mDet" type="button" aria-pressed="true">Determinate</button>
+    <button id="mInd" type="button" aria-pressed="false">Indeterminate</button>
+  </div>
+  <label class="slider" id="sliderWrap" for="prog" hidden>Progress
+    <input id="prog" type="range" min="0" max="100" step="1" value="0">
+    <output id="progOut" for="prog">000%</output>
+  </label>
+  <button id="complete" type="button" hidden>Complete</button>
+  <span class="status" id="status" hidden>Ready</span>
+</div>
+
+<script>
+(() => {
+const NS = 'http://www.w3.org/2000/svg';
+const $ = id => document.getElementById(id);
+const svg=$('scene'), wordG=$('word'), lb=$('lb'), rb=$('rb'), figG=$('fig');
+const torso=$('torso'), legA=$('legA'), legB=$('legB'), armA=$('armA'), armB=$('armB'), head=$('head');
+const bar=$('bar'), btnReplay=$('replay'), btnDet=$('mDet'), btnInd=$('mInd');
+const range=$('prog'), out=$('progOut'), sliderWrap=$('sliderWrap'), btnDone=$('complete'), statusEl=$('status');
+const FONT = '"BenchNine", "Arial Narrow", sans-serif', WEIGHT=300;
+const floorEl=document.getElementById('floor');
+const RM = matchMedia('(prefers-reduced-motion: reduce)');
+const ctx = document.createElement('canvas').getContext('2d');
+
+const clamp=(x,a,b)=>Math.min(b,Math.max(a,x));
+const smooth=(a,b,x)=>{const t=clamp((x-a)/(b-a),0,1);return t*t*(3-2*t)};
+const rand=(a,b)=>a+Math.random()*(b-a);
+const noise=(t,k)=>Math.sin(t*41.3+k*1.7)*.5+Math.sin(t*67.9+k*3.1)*.3+Math.sin(t*103.1+k*5.3)*.2;
+const f2=p=>p[0].toFixed(2)+' '+p[1].toFixed(2);
+
+/* ---------- layout ---------- */
+let Ly={};
+function measure(){
+  const vw=innerWidth, vh=innerHeight, avail=vh;
+  ctx.font=`${WEIGHT} 100px ${FONT}`;
+  const m=ch=>ctx.measureText(ch);
+  const cap100=m('H').actualBoundingBoxAscent||80;
+  const wOf=w=>[...w].map(ch=>m(ch).width);
+  const wl=wOf('LOADING'), avg=wl.reduce((a,b)=>a+b)/wl.length;
+  // brackets are drawn as hairline paths (same weight as the figure), not font glyphs
+  const lbAbl=0, rbAbl=0, lbW=0, rbW=0;   // no brackets: the word itself is the object
+  const track=avg*0.62, pad=avg*0.9;
+  const compL=lbW+0.35*pad+wl.reduce((a,b)=>a+b)+6*track+rbW;
+  const wc=wOf('COMPLETE!'), compC=lbW+0.35*pad+wc.reduce((a,b)=>a+b)+(wc.length-1)*track+rbW;
+  const ext=1.5*avg;   // the line runs one and a half letters past the word on each side
+  const rp=0.35*pad, textL=compL-rp, textC=compC-rp;
+  const line100=2*ext+(textL+textC)/2;
+  // the word sits small in the middle of the screen, leaving room for the throw
+  const target=vw<700?vw*0.84:vw*0.5;
+  const F=Math.max(14,Math.min(100*target/line100, 100*avail*0.2/cap100));
+  const k=F/100, capH=cap100*k;
+  const origin=vw/2-(textL+textC)/4*k, lineL=origin-ext*k;
+  const base=avail/2+capH/2, stroke=Math.max(1.2,capH*0.045), lineY=base+stroke*0.5;   // no visible line: the figure stands on the baseline
+  Ly={vw,vh,F,capH,adv:avg*k,track:track*k,pad:pad*k,
+    wid:{LOADING:wl.map(w=>w*k),'COMPLETE!':wOf('COMPLETE!').map(w=>w*k)},
+    lbAbl:lbAbl*k,lbW:lbW*k,rbAbl:rbAbl*k,rbW:rbW*k,
+    origin,lineL,lineR:origin+(textL+1.8*ext)*k,ext:ext*k,rp:rp*k,lineY,base,ground:lineY-stroke/2,
+    restX:origin+compL*k+1.35*capH,
+    u:capH*0.95/98,stroke};
+  svg.setAttribute('viewBox',`0 0 ${vw} ${vh}`);
+  wordG.setAttribute('font-size',F.toFixed(2));
+  [lb,rb].forEach(el=>el.setAttribute('stroke-width',stroke.toFixed(2)));
+  figG.setAttribute('stroke-width',stroke.toFixed(2));
+  floorEl.setAttribute('stroke-width',stroke.toFixed(2));
+  floorEl.setAttribute('x1',Ly.lineL.toFixed(2));
+  floorEl.setAttribute('y1',lineY.toFixed(2)); floorEl.setAttribute('y2',lineY.toFixed(2));
+}
+
+/* The word is a chain of springs, left-anchored. Right-hand springs are softer,
+   so the right pad collapses first, then tracking, then glyphs — right to left. */
+function chain(word){
+  const {adv,track,pad}=Ly, W=Ly.wid[word], n=W.length, els=[];
+  els.push({kind:'pad',rest:0,min:0,k:40});
+  for(let i=0;i<n;i++){
+    // every letter stays: they all get squeezed together (right side a little softer), gaps close up and overlap slightly
+    const r=n>1?i/(n-1):0, f=Math.pow(1+1.2*(1-r),2);
+    els.push({kind:'g',rest:W[i],min:W[i]*0.3,k:2.2*f*adv/W[i]});
+    if(i<n-1){const r2=(i+0.5)/(n-1), g=Math.pow(1+1.2*(1-r2),2); els.push({kind:'gap',rest:track,min:-0.12*adv,k:0.8*g});}
+  }
+  els.push({kind:'pad',rest:pad*0.35,min:adv*0.06,k:0.6});
+  els.rest=els.reduce((s,e)=>s+e.rest,0);
+  els.min=els.reduce((s,e)=>s+e.min,0);
+  return els;
+}
+function solve(els,S){
+  if(S>=els.rest){
+    const extra=S-els.rest; let flex=0;
+    for(const e of els) if(e.kind!=='g') flex+=e.rest;
+    for(const e of els) e.len=e.rest+(e.kind!=='g'?extra*e.rest/flex:0);
+    return;
+  }
+  if(S<=els.min){for(const e of els) e.len=e.min*S/els.min; return;}
+  let lo=0,hi=0; for(const e of els) hi=Math.max(hi,(e.rest-e.min)*e.k);
+  for(let it=0;it<36;it++){
+    const P=(lo+hi)/2; let tot=0;
+    for(const e of els) tot+=Math.max(e.min,e.rest-P/e.k);
+    if(tot>S) lo=P; else hi=P;
+  }
+  let tot=0; for(const e of els){e.len=Math.max(e.min,e.rest-hi/e.k); tot+=e.len;}
+  els[els.length-1].len+=S-tot;
+}
+const originFor=()=>Ly.origin;
+
+/* ---------- state ---------- */
+const S={mode:'det',phase:'rest',pt:0,c:0,cv:0,ct:0,omega:10,zeta:1,word:'LOADING',chain:null,
+  prog:0,auto:true,gen:{seg:0,rate:0},ind:{sub:'push',st:0,dur:2,from:0,peak:.6,low:.15},
+  fade:1,originFrom:0,originTo:0,vPeak:0,J:0,completeReq:false};
+const fig={mode:'stand',hipX:0,lean:.04,effort:0,phase:0,x:0,y:0,vx:0,vy:0,rot:0,vr:0,t:0,
+  squash:0,walkSpeed:60,prevContact:null,P:null,fromP:null,bl:1,blDur:.3,x0:0,y0:0,tf:.8,g:0,rot0:0,rotEnd:0,hx:0,vs:0,adv:0,feet:[[0,0],[0,0]],swing:null,trail:[],trailA:0};
+let letters=[], T=0;
+
+function setWord(w){
+  S.word=w; wordG.textContent='';
+  letters=[...w].map(ch=>{const t=document.createElementNS(NS,'text'); t.textContent=ch; wordG.appendChild(t); return t;});
+  S.chain=chain(w);
+}
+const go=p=>{S.phase=p;S.pt=0;};
+const spring=(w,z)=>{S.omega=w;S.zeta=z;};
+const setSub=(n,d)=>{S.ind.sub=n;S.ind.st=0;S.ind.dur=d;};
+
+function geom(){
+  const els=S.chain, c=S.c;
+  solve(els, els.min+(els.rest-els.min)*(1-c));
+  const ox = S.phase==='release' ? S.originTo+(S.originFrom-S.originTo)*clamp(c,-.4,1) : originFor(els);
+  let x=ox+Ly.lbW; const L=[];
+  for(const e of els){ if(e.kind==='g') L.push({x,s:e.len/e.rest}); x+=e.len; }
+  return {ox,letters:L,rbL:x,rbR:x+Ly.rbW,rbx:0};
+}
+const restHipX=()=>Ly.lineR-0.3*Ly.capH;
+const pushHipX=(cx,lean,e)=>cx+(36-3*e)*Ly.u+TORSO*Ly.u*(1-0.05*e)*Math.sin(lean);
+
+/* ---------- figure: matches the motion reference — big round head sitting right on a short torso,
+   thin limbs. Units of u; standing height 96u ---------- */
+const HR=11, NECK=0, TORSO=30, THIGH=23, SHIN=23, UARM=20, FARM=18;
+const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+function ik(a,b,l1,l2,sign){
+  let dx=b[0]-a[0], dy=b[1]-a[1], d=Math.hypot(dx,dy);
+  if(d<1e-6){dx=0;dy=1;d=1e-6;}
+  const dd=clamp(d,Math.abs(l1-l2)+1e-3,(l1+l2)*0.999), nx=dx/d, ny=dy/d;
+  const A=(l1*l1-l2*l2+dd*dd)/(2*dd), h=Math.sqrt(Math.max(0,l1*l1-A*A));
+  return [[a[0]+A*nx-sign*h*ny, a[1]+A*ny+sign*h*nx],[a[0]+nx*dd,a[1]+ny*dd]];
+}
+/* forward kinematics; positive angle = swung forward (to the left, direction of travel) */
+function legFK(hip,a,flex){const u=Ly.u;
+  const k=[hip[0]-Math.sin(a)*THIGH*u, hip[1]+Math.cos(a)*THIGH*u];
+  return [k,[k[0]-Math.sin(a-flex)*SHIN*u, k[1]+Math.cos(a-flex)*SHIN*u]];}
+function armFK(sh,a,bend){const u=Ly.u;
+  const e=[sh[0]-Math.sin(a)*UARM*u, sh[1]+Math.cos(a)*UARM*u];
+  return [e,[e[0]-Math.sin(a+bend)*FARM*u, e[1]+Math.cos(a+bend)*FARM*u]];}
+function upper(hip,lean,bend,T){
+  const u=Ly.u,s=Math.sin(lean),c=Math.cos(lean),hr=HR*u;
+  const sh=[hip[0]-T*s,hip[1]-T*c];
+  return {hip,sh,hr,neck:sh,
+    head:[sh[0]-s*hr, sh[1]-c*hr],
+    mid:[(hip[0]+sh[0])/2+c*bend,(hip[1]+sh[1])/2-s*bend]};
+}
+/* 01 Walk / 02 Stop: walking=false is the standing pose; squash = landing/crouch 0..1 */
+function poseStand(hipX,lean,phase,walking,squash){
+  const u=Ly.u, x=2*Math.PI*phase, legs=[], arms=[];
+  for(let k=0;k<2;k++){
+    const xk=x+k*Math.PI;
+    if(walking){
+      const a=0.46*Math.sin(xk), flex=0.04+0.5*Math.pow(Math.max(0,Math.cos(xk)),1.6);
+      legs.push([a,flex]);
+      arms.push([-0.28*Math.sin(xk)+(k?-0.22:0.24), 0.12+0.15*Math.max(0,-Math.sin(xk))]);
+    } else {
+      legs.push([(k?-0.1:0.1)+0.4*squash, 0.02+0.8*squash]);
+      arms.push([(k?-0.3:0.32)+0.25*squash, (k?-0.1:0.12)+0.3*squash]);
+    }
+  }
+  let low=0; legs.map(([a,f])=>legFK([0,0],a,f)).forEach(l=>low=Math.max(low,l[1][1]));
+  const hip=[hipX,Ly.ground-low];
+  const P=upper(hip,lean+(walking?0.03*Math.sin(2*x):0)+0.12*squash,(walking?0.4+0.3*Math.sin(2*x):0.6)*u+squash*2*u,TORSO*u*(1-0.06*squash));
+  P.legs=legs.map(([a,f])=>legFK(hip,a,f));
+  P.arms=arms.map(([a,b])=>armFK(P.sh,a,b));
+  return P;
+}
+/* 03–05 Contact / Lean in / Apply force (motion reference): torso on a diagonal, arms straight out to
+   the bracket, a lunge — front knee bent toward the bracket, back leg long and straight behind.
+   Feet stay planted; the back foot only steps forward when the leg can't stretch any further. */
+const pushBack=lean=>(THIGH+SHIN)*Ly.u*0.7;
+function pushFrame(cx,lean,e){
+  const u=Ly.u,Lg=(THIGH+SHIN)*u;
+  const T=TORSO*u*(1-0.05*e), shX=cx+(36-3*e)*u, hipX=shX+T*Math.sin(lean);
+  const h=Lg*(0.86-0.22*e);
+  return {u,Lg,T,hipX,hipY:Ly.ground-h,reach:Math.sqrt(Math.max(0,Math.pow(0.985*Lg,2)-h*h))};
+}
+function posePush(cx,lean,e,feet){
+  const u=Ly.u, fr=pushFrame(cx,lean,e), hip=[fr.hipX,fr.hipY];
+  const P=upper(hip,lean,e*1.2*u,fr.T);
+  P.legs=feet.map(f=>ik(hip,f,THIGH*u,SHIN*u,1));
+  P.arms=[[cx,P.sh[1]+1*u],[cx,P.sh[1]+3*u]].map(h=>ik(P.sh,h,UARM*u,FARM*u,-1));
+  return P;
+}
+function stepFeet(dt,cx){
+  const u=Ly.u, fr=pushFrame(cx,fig.lean,fig.effort), F=fig.feet, g=Ly.ground;
+  const frontX=fr.hipX-20*u;
+  if(fig.swing){
+    const sw=fig.swing; sw.t=Math.min(1,sw.t+dt/0.55);
+    const k=ease(sw.t);
+    F[sw.i]=[sw.from+(frontX-sw.from)*k, g-6*u*Math.sin(Math.PI*sw.t)];
+    if(sw.t>=1){F[sw.i][1]=g; fig.swing=null;}
+  }
+  for(let i=0;i<2;i++){
+    if(fig.swing&&fig.swing.i===i) continue;
+    // a planted foot can't be further than a straight leg allows: it drags
+    if(F[i][0]>fr.hipX+fr.reach) F[i][0]=fr.hipX+fr.reach;
+    if(F[i][0]<fr.hipX-26*u) F[i][0]=fr.hipX-26*u;
+    F[i][1]=g;
+  }
+  // when the back leg is fully stretched and the body is still going forward, bring it through
+  if(!fig.swing){
+    const bi=F[0][0]>F[1][0]?0:1;
+    if(F[bi][0]>=fr.hipX+fr.reach-0.5*u && fig.adv>0.08) fig.swing={i:bi,t:0,from:F[bi][0]};
+  }
+}
+
+/* 08 Release, 09–10 tucked tumble, 12 lying: built upright around the hip, then rotated */
+function poseLocal(kind,t){
+  const u=Ly.u, T=TORSO*u, fl=Math.sin(t*14), P=upper([0,0],0,0,T);
+  if(kind==='recoil'){      // 09–10: knocked backwards, arms flung forward, feet stumbling
+    P.legs=[legFK([0,0],0.45+0.1*fl,0.7),legFK([0,0],-0.25,0.15)];
+    P.arms=[armFK(P.sh,1.35+0.1*fl,0.35),armFK(P.sh,1.05-0.1*fl,0.45)];
+  } else if(kind==='fall'){ // 11: losing balance, body straight, arms reaching forward-up
+    P.legs=[legFK([0,0],0.35,0.5),legFK([0,0],-0.05,0.1)];
+    P.arms=[armFK(P.sh,2.1+0.15*fl,0.3),armFK(P.sh,1.8-0.15*fl,0.4)];
+  } else if(kind==='tuck'){ // balled up, knees to chest, arms round the shins
+    P.legs=[legFK([0,0],1.95,2.55),legFK([0,0],1.8,2.45)];
+    P.arms=[armFK(P.sh,1.35,1.05),armFK(P.sh,1.15,1.2)];
+  } else {                  // lying on its side: limbs rest toward local +x (the ground once rotated)
+    P.legs=[ik([0,0],[13*u,44*u],THIGH*u,SHIN*u,-1),ik([0,0],[12*u,38*u],THIGH*u,SHIN*u,1)];
+    P.arms=[ik(P.sh,[12*u,P.sh[1]+18*u],UARM*u,FARM*u,-1),ik(P.sh,[11*u,P.sh[1]+8*u],UARM*u,FARM*u,-1)];
+  }
+  return P;
+}
+function localMix(k1,k2,w,t){return w<=0?poseLocal(k1,t):w>=1?poseLocal(k2,t):lerpP(poseLocal(k1,t),poseLocal(k2,t),ease(w));}
+function place(P,x,y,rot){
+  const cs=Math.cos(rot),sn=Math.sin(rot), m=p=>[x+p[0]*cs-p[1]*sn, y+p[0]*sn+p[1]*cs];
+  return {hip:m(P.hip),sh:m(P.sh),hr:P.hr,neck:m(P.neck),head:m(P.head),mid:m(P.mid),
+    legs:P.legs.map(l=>[m(l[0]),m(l[1])]),arms:P.arms.map(a=>[m(a[0]),m(a[1])])};
+}
+const lieY=()=>Ly.ground-HR*Ly.u-Ly.stroke*0.5;
+function lerpP(A,B,t){
+  const l=(a,b)=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];
+  return {hip:l(A.hip,B.hip),sh:l(A.sh,B.sh),hr:B.hr,neck:l(A.neck,B.neck),head:l(A.head,B.head),mid:l(A.mid,B.mid),
+    legs:B.legs.map((q,i)=>[l(A.legs[i][0],q[0]),l(A.legs[i][1],q[1])]),
+    arms:B.arms.map((q,i)=>[l(A.arms[i][0],q[0]),l(A.arms[i][1],q[1])])};
+}
+function blendFrom(dur){ if(fig.P){fig.fromP=fig.P; fig.bl=0; fig.blDur=dur;} }
+/* straight segments with a real corner at the knee / elbow, as in the reference */
+function limb(a,j,b){ return `M${f2(a)} L${f2(j)} L${f2(b)}`; }
+function drawFig(P){
+  torso.setAttribute('d',`M${f2(P.hip)} L${f2(P.neck)}`);
+  legA.setAttribute('d',limb(P.hip,P.legs[0][0],P.legs[0][1]));
+  legB.setAttribute('d',limb(P.hip,P.legs[1][0],P.legs[1][1]));
+  armA.setAttribute('d',limb(P.sh,P.arms[0][0],P.arms[0][1]));
+  armB.setAttribute('d',limb(P.sh,P.arms[1][0],P.arms[1][1]));
+  head.setAttribute('cx',P.head[0].toFixed(2)); head.setAttribute('cy',P.head[1].toFixed(2)); head.setAttribute('r',P.hr.toFixed(2));
+}
+
+/* ---------- phases ---------- */
+function initRun(){
+  if(S.mode==='det'){S.gen.seg=0;}
+  else {S.ind={sub:'push',st:0,dur:rand(1.5,2.3),from:S.c,peak:rand(.4,.78),low:.15,hold:0,lastEp:'',pendingFinal:false};}
+}
+function startApproach(){
+  const G=geom(); const target=pushHipX(G.rbR+Ly.stroke*0.6,0.08,0);
+  fig.mode='walk'; fig.walkSpeed=Math.max(Ly.capH*0.45,(fig.hipX-target)/3.4);
+  go('approach');
+}
+function release(){
+  S.originFrom=originFor(S.chain);
+  setWord('COMPLETE!');
+  S.originTo=originFor(S.chain);
+  S.c=1; S.cv=0; S.vPeak=0;
+  go('release'); spring(RM.matches?10:14, RM.matches?1:0.42);
+}
+/* thrown up and away at ~60°, fast enough to clear the word as it springs open, and out of frame */
+function launch(){
+  const P=fig.P, c=Ly.capH;
+  fig.x0=P.hip[0]; fig.y0=P.hip[1];
+  // a soft, low throw (~35°) that drifts out through the right edge in about a second
+  const exitT=1.05, run=Ly.vw-fig.x0+80*Ly.u;
+  fig.vx=run/exitT; fig.vy=-fig.vx*Math.tan(Math.PI*35/180); fig.g=c*2.2;
+  fig.rot0=-fig.lean; fig.vr=4.5; fig.t=0;
+  blendFrom(0.08); fig.trail=[];
+  fig.mode=RM.matches?'gone':'fly'; if(RM.matches) fig.P=null;
+}
+function runDet(dt){
+  if(S.auto){
+    const g=S.gen; g.seg-=dt;
+    if(g.seg<=0){const r=Math.random(); g.rate=r<.16?0:r<.42?7:r<.8?16:30; g.seg=rand(.25,.8);}
+    S.prog=Math.min(100,S.prog+g.rate*dt); syncSlider();
+  }
+  S.ct=S.prog>=100?1:Math.min(0.992,S.prog/100); spring(9,1);
+  if(S.prog>=100) go('final');
+}
+/* ---------- indeterminate: the figure doesn't just push-and-slip, it takes different kinds of breaks ---------- */
+const EPIS=['slip','backrest','rest','wipe','charge'];
+function pickEpisode(){let e,n=0; do{e=EPIS[Math.floor(Math.random()*EPIS.length)];}while(e===S.ind.lastEp&&++n<6); S.ind.lastEp=e; return e;}
+function edgeAt(c){const els=S.chain; solve(els,els.min+(els.rest-els.min)*(1-c)); let x=originFor()+Ly.lbW; for(const e of els) x+=e.len; return x+Ly.rbW+Ly.stroke*0.6;}
+function enterPush(cx){
+  const u=Ly.u; blendFrom(0.35);
+  const fr=pushFrame(cx,0.45,0.1); fig.feet=[[fr.hipX-20*u,Ly.ground],[fr.hipX+fr.reach*0.92,Ly.ground]];
+  fig.swing=null; fig.mode='push'; fig.effort=0.3; fig.prevContact=cx; fig.act=null;
+}
+function startEpisode(ep){
+  const I=S.ind, u=Ly.u, c=Ly.capH;
+  I.hold=S.c;
+  if(ep==='slip'){I.low=rand(.1,.24); setSub('slip',.8); return;}
+  blendFrom(0.4);
+  fig.act={kind:ep,t:0,x0:fig.P?fig.P.hip[0]:fig.hipX}; fig.mode='act';
+  if(ep==='backrest') setSub('backrest',rand(2.4,3.2));
+  else if(ep==='rest'){I.low=rand(.05,.15); fig.act.x1=edgeAt(I.low)+1.3*c; setSub('rest',rand(3.2,3.8));}
+  else if(ep==='wipe'){I.low=S.c*0.8; fig.act.x1=edgeAt(I.low)+16*u; setSub('wipe',2);}
+  else if(ep==='charge'){I.low=rand(.12,.22); fig.act.x1=edgeAt(I.low)+2.6*c; setSub('charge',99);}
+}
+function resumePush(){ // walk back to the word and get going again
+  const x=fig.P?fig.P.hip[0]:fig.hipX;
+  blendFrom(0.3); fig.mode='walk'; fig.resume=true; fig.hipX=x; fig.lean=0.08; fig.walkSpeed=Ly.capH*0.9; fig.act=null;
+}
+function nextPush(){const I=S.ind; I.from=S.c; I.peak=Math.min(.88,Math.max(S.c+0.12,rand(.3,.85))); setSub('push',rand(1.4,2.2));}
+function runInd(dt){
+  const I=S.ind; I.st+=dt;
+  if(S.completeReq){
+    S.completeReq=false;
+    if(fig.mode==='push'){go('final'); return;}
+    I.pendingFinal=true; if(fig.mode!=='walk') resumePush();
+  }
+  switch(I.sub){
+    case 'push': {
+      const k=clamp(I.st/I.dur,0,1), e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+      S.ct=I.from+(I.peak-I.from)*e+0.012*Math.sin(I.st*7.5); spring(7,1);
+      if(I.st>=I.dur) setSub('struggle',rand(.6,1.1));
+      break;}
+    case 'struggle':
+      S.ct=I.peak+0.008*Math.sin(I.st*11)-0.025*(I.st/I.dur); spring(14,1);
+      if(I.st>=I.dur) startEpisode(pickEpisode());
+      break;
+    case 'slip': S.ct=I.low; spring(10,.42); if(I.st>=I.dur) setSub('regroup',.35); break;
+    case 'regroup': S.ct=I.low; spring(10,.8); if(I.st>=I.dur) nextPush(); break;
+    case 'backrest': // its back holds the word while it gets its breath; the word creeps back a little
+      S.ct=I.hold-0.06*(I.st/I.dur); spring(5,1);
+      if(I.st>=I.dur&&fig.mode==='act'){enterPush(fig.contact); nextPush();}
+      break;
+    case 'rest': S.ct=I.low; spring(4,.6); if(I.st>=I.dur&&fig.mode==='act') resumePush(); break;
+    case 'wipe': S.ct=I.low; spring(3,1); if(I.st>=I.dur&&fig.mode==='act') resumePush(); break;
+    case 'charge': S.ct=I.low; spring(4,.6); break;   // ends when the run-up hits the word
+  }
+}
+function mirrorP(P,x0){const m=p=>[2*x0-p[0],p[1]]; return {hip:m(P.hip),sh:m(P.sh),hr:P.hr,neck:m(P.neck),head:m(P.head),mid:m(P.mid),legs:P.legs.map(l=>[m(l[0]),m(l[1])]),arms:P.arms.map(a=>[m(a[0]),m(a[1])])};}
+function poseBackLean(cx,t){ // turned round, back against the word, legs braced out in front, breathing
+  const u=Ly.u,g=Ly.ground,T=TORSO*u, br=Math.sin(t*3.2), lean=0.36+0.03*br;
+  const shX=cx+(HR+2)*u, hipX=shX+T*Math.sin(lean), hipY=g-36*u+0.8*u*br;
+  const hip=[hipX,hipY], P=upper(hip,lean,0,T);
+  P.legs=[[hipX+22*u,g],[hipX+28*u,g]].map(f=>ik(hip,f,THIGH*u,SHIN*u,-1));
+  P.arms=[[hipX+5*u,hipY-3*u],[hipX+8*u,hipY-1*u]].map(h=>ik(P.sh,h,UARM*u,FARM*u,1));
+  return P;
+}
+function poseKnees(hipX,t){ // bent over, hands on knees, panting (built facing left)
+  const u=Ly.u,g=Ly.ground,T=TORSO*u,pant=Math.sin(t*7);
+  const hip=[hipX,g-38*u+pant*0.6*u], P=upper(hip,0.95+0.05*pant,1.5*u,T);
+  P.legs=[[hipX-7*u,g],[hipX+5*u,g]].map(f=>ik(hip,f,THIGH*u,SHIN*u,1));
+  P.arms=P.legs.map((l,i)=>ik(P.sh,[l[0][0]-1*u,l[0][1]-(i?1:2)*u],UARM*u,FARM*u,-1));
+  return P;
+}
+function poseWipe(hipX,t){ // straightens up and wipes its brow
+  const P=poseStand(hipX,-0.06,0,false,0), u=Ly.u, k=Math.sin(t*9);
+  P.arms[0]=ik(P.sh,[P.head[0]-P.hr*0.3+k*3*u, P.head[1]-P.hr*0.1],UARM*u,FARM*u,-1);
+  return P;
+}
+function updateAct(dt,cx){
+  const A=fig.act, t=(A.t+=dt), c=Ly.capH, u=Ly.u;
+  if(A.kind==='backrest') fig.P=poseBackLean(cx,t);
+  else if(A.kind==='rest'){ // lets go, turns and trudges off a few steps, then doubles over
+    if(t<1.1){const x=Math.max(cx+16*u,A.x0+(A.x1-A.x0)*ease(t/1.1)); fig.phase=(fig.phase+dt*1.2)%1; fig.P=mirrorP(poseStand(x,0.12,fig.phase,true,0),x);}
+    else {if(!A.bent){A.bent=true; blendFrom(0.4);} fig.P=mirrorP(poseKnees(A.x1,t),A.x1);}
+  }
+  else if(A.kind==='wipe'){
+    if(t<0.5){const x=A.x0+(A.x1-A.x0)*ease(t/0.5); fig.P=poseStand(x,0.05,0,false,0.2*(1-t/0.5));}
+    else fig.P=poseWipe(A.x1,t);
+  }
+  else if(A.kind==='charge'){ // backs off, crouches, then runs at the word
+    A.stage=A.stage||'away';
+    if(A.stage==='away'){const k=Math.min(1,t/1.4), x=Math.max(cx+16*u,A.x0+(A.x1-A.x0)*ease(k)); fig.phase=(fig.phase+dt*1.3)%1; fig.P=mirrorP(poseStand(x,0.1,fig.phase,true,0),x); if(k>=1){A.stage='ready'; A.t0=t; blendFrom(0.3);}}
+    else if(A.stage==='ready'){fig.P=poseStand(A.x1,0.3,0,false,0.45); if(t-A.t0>0.6){A.stage='run'; A.x=A.x1; fig.phase=0; blendFrom(0.15);}}
+    else {
+      const sp=c*3.4; A.x-=sp*dt; fig.phase=(fig.phase+sp*dt/(84*u))%1;
+      fig.P=poseStand(A.x,0.32,fig.phase,true,0);
+      if(A.x<=pushHipX(cx,0.32,0)){enterPush(cx); fig.effort=0.9; S.cv+=2.4; const I=S.ind; I.from=Math.min(.9,S.c+0.08); I.peak=Math.min(.9,S.c+rand(.35,.5)); setSub('push',rand(1,1.4));}
+    }
+  }
+}
+
+function step(dt){
+  S.pt+=dt; S.fade=Math.min(1,S.fade+dt*4);
+  switch(S.phase){
+    case 'rest': S.ct=0; spring(10,1); if(S.pt>0.55) startApproach(); break;
+    case 'approach': S.ct=0; break;
+    case 'run': S.mode==='det'?runDet(dt):runInd(dt); break;
+    case 'final': S.ct=1; spring(8,1); if(S.c>0.985) go('tension'); break;
+    case 'tension': S.ct=1-0.004*(0.5+0.5*noise(T,6)); spring(30,1); if(S.pt>0.95) release(); break;
+    case 'release': S.ct=0; if(S.pt>1.6&&Math.abs(S.c)<0.002&&Math.abs(S.cv)<0.02) go('done'); break;
+    case 'done': S.ct=0; if(S.pt>2.8) replay(); break;   // loops on its own: no controls
+  }
+  const n=4,h=dt/n;
+  for(let i=0;i<n;i++){const a=S.omega*S.omega*(S.ct-S.c)-2*S.zeta*S.omega*S.cv; S.cv+=a*h; S.c+=S.cv*h;}
+  if(S.phase!=='release'&&S.phase!=='done'){ if(S.c>1){S.c=1;S.cv=0;} if(S.c<-0.06){S.c=-0.06;S.cv=0;} }
+
+  let Jt=0;
+  if(S.phase==='tension') Jt=1;
+  else if(S.phase==='final'||(S.phase==='run'&&S.mode==='det')) Jt=smooth(0.8,1,S.c)*0.8;
+  else if(S.phase==='run'&&S.ind.sub==='struggle') Jt=0.4;
+  if(RM.matches) Jt=0;
+  S.J+=(Jt-S.J)*Math.min(1,dt*5);
+}
+
+function updateFig(dt,G){
+  const u=Ly.u, cx=G.rbR+G.rbx+Ly.stroke*0.6;
+  fig.contact=cx;
+  fig.t+=dt;
+  switch(fig.mode){
+    case 'stand':
+      fig.lean+=(0.02-fig.lean)*Math.min(1,dt*4); fig.squash*=Math.exp(-dt*5);
+      fig.P=poseStand(fig.hipX,fig.lean+0.025*Math.sin(fig.t*2.1),0,false,fig.squash+0.03*(1+Math.sin(fig.t*2.1))); break;
+    case 'walk': {
+      fig.lean+=(0.08-fig.lean)*Math.min(1,dt*4); fig.squash=0;
+      const target=pushHipX(cx,0.08,0), dx=target-fig.hipX, sp=fig.walkSpeed;
+      if(Math.abs(dx)<=sp*dt){
+        fig.hipX=target;
+        if(S.phase==='approach'){blendFrom(0.4); {const fr=pushFrame(cx,0.45,0.1); fig.feet=[[fr.hipX-20*u,Ly.ground],[fr.hipX+fr.reach*0.92,Ly.ground]];} fig.swing=null; fig.mode='push'; fig.effort=0; fig.prevContact=cx; go('run'); initRun();}
+        else if(fig.resume){fig.resume=false; enterPush(cx); if(S.ind.pendingFinal){S.ind.pendingFinal=false; go('final');} else nextPush();}
+        else fig.mode='stand';
+      } else {fig.hipX+=Math.sign(dx)*sp*dt; fig.phase=(fig.phase+sp*dt/(84*u))%1;}
+      fig.P=poseStand(fig.hipX,fig.lean,fig.phase,true,0); break;
+    }
+    case 'act': updateAct(dt,cx); break;
+    case 'push': {
+      let tE=0.4;
+      if(S.phase==='tension'||S.phase==='release') tE=1;
+      else if(S.phase==='final') tE=0.9;
+      else if(S.phase==='run'){
+        if(S.mode==='det') tE=0.3+0.7*clamp(S.c,0,1);
+        else {const s=S.ind.sub; tE=s==='push'?0.45+0.5*clamp(S.c/0.72,0,1):s==='struggle'?0.95:s==='slip'?0.55:0.35;}
+      }
+      fig.effort+=(tE-fig.effort)*Math.min(1,dt*5);
+      fig.lean+=((0.45+0.5*fig.effort)-fig.lean)*Math.min(1,dt*5);
+      const vC=(cx-(fig.prevContact??cx))/Math.max(dt,1e-4); fig.prevContact=cx;
+      let rate=0;
+      if(vC<0) rate=0.3*(-vC)/Math.max(8*u,pushBack(fig.lean)+5*u);
+      fig.adv+=(clamp(-vC/(Ly.capH*0.6),0,1)-fig.adv)*Math.min(1,dt*6);
+      if(vC<=0.5){
+        const scramble=(S.phase==='tension'||(S.phase==='run'&&S.mode==='ind'&&S.ind.sub==='struggle'))?0.3:0.12*fig.effort;
+        rate+=scramble;
+      }
+      stepFeet(dt,cx);
+      fig.P=posePush(cx,fig.lean,fig.effort,fig.feet);
+      if(S.phase==='release') launch();
+      break;
+    }
+    case 'fly': {
+      const t=fig.t;
+      fig.x=fig.x0+fig.vx*t; fig.y=fig.y0+fig.vy*t+fig.g*t*t/2;
+      fig.rot=fig.rot0+fig.vr*t*t/(t+0.08);
+      const L=t<0.12?localMix('recoil','fall',t/0.12,t):localMix('fall','tuck',(t-0.12)/0.12,t);
+      fig.P=place(L,fig.x,fig.y,fig.rot); pushTrail();
+      const m=60*Ly.u;
+      if(fig.x>Ly.vw+m||fig.y<-m||fig.x<-m){fig.mode='gone'; fig.P=null; fig.trailA=0;}
+      break;
+    }
+    case 'gone': fig.P=null; break;
+    case 'hop': { // one small bounce, then slide
+      const d=0.3, k=Math.min(fig.t/d,1);
+      fig.x=fig.hx+Ly.capH*0.3*k; fig.y=lieY()-Ly.capH*0.35*Math.sin(Math.PI*k);
+      fig.rot=Math.PI/2+0.25*Math.sin(Math.PI*k);
+      fig.P=place(poseLocal('lie',0),fig.x,fig.y,fig.rot); pushTrail();
+      if(k>=1){fig.mode='slide'; fig.vs=Ly.capH*1.6;}
+      break;
+    }
+    case 'slide':
+      fig.x+=fig.vs*dt; fig.vs=Math.max(0,fig.vs-Ly.capH*4*dt); fig.rot=Math.PI/2;
+      fig.P=place(poseLocal('lie',0),fig.x,lieY(),fig.rot);
+      if(fig.vs<=0) fig.mode='lie';
+      break;
+    case 'lie':
+      fig.P=place(poseLocal('lie',0),fig.x,lieY(),Math.PI/2);
+      break;
+  }
+  if(fig.bl<1&&fig.fromP){fig.bl=Math.min(1,fig.bl+dt/fig.blDur); fig.P=lerpP(fig.fromP,fig.P,ease(fig.bl));}
+}
+
+/* ---------- effort marks, dust, flight trail (from the motion reference) ---------- */
+const fxG=$('fx'), trailEl=$('trail'), strainEl=$('strain'), motionEl=$('motion'), dustEl=$('dust');
+/* line confetti for COMPLETE!: short strokes, zigzags, curls and waves that burst up and flutter down */
+const confEl=$('confetti'); let confetti=[];
+const SHAPES=['line','zig','curl','wave','line','curl'];
+function burst(){
+  const c=Ly.capH, x0=Ly.origin, x1=Ly.origin+(Ly.wid['COMPLETE!'].reduce((a,b)=>a+b)+8*Ly.track);
+  confetti=[];
+  for(let i=0;i<34;i++){
+    const x=x0+(x1-x0)*Math.random();
+    confetti.push({x, y:Ly.base-c*rand(.2,.9), vx:rand(-1.6,1.6)*c+(x-(x0+x1)/2)*0.9, vy:-rand(2.4,4.2)*c,
+      rot:rand(0,6.28), vr:rand(-6,6), L:c*rand(.18,.34), kind:SHAPES[i%SHAPES.length], ph:rand(0,6.28), t:0, life:rand(2.2,3.2)});
+  }
+}
+function drawConfetti(dt){
+  if(!confetti.length){confEl.setAttribute('d',''); return;}
+  const c=Ly.capH; let d='', alive=[];
+  for(const q of confetti){
+    q.t+=dt; if(q.t>q.life) continue; alive.push(q);
+    q.vy+=c*5.5*dt; q.vx*=Math.exp(-1.6*dt); q.vy=Math.min(q.vy,c*1.4);   // light things: drag, slow terminal fall
+    q.x+=q.vx*dt+Math.sin(q.t*6+q.ph)*c*0.35*dt; q.y+=q.vy*dt; q.rot+=q.vr*dt;
+    const cs=Math.cos(q.rot), sn=Math.sin(q.rot), L=q.L*Math.min(1,(q.life-q.t)/0.6), P=(a,b)=>f2([q.x+a*cs-b*sn,q.y+a*sn+b*cs]);
+    if(q.kind==='line') d+=`M${P(-L/2,0)} L${P(L/2,0)} `;
+    else if(q.kind==='zig') d+=`M${P(-L/2,0)} L${P(-L/4,-L*.22)} L${P(0,0)} L${P(L/4,-L*.22)} L${P(L/2,0)} `;
+    else if(q.kind==='curl') d+=`M${P(-L/2,0)} Q${P(0,-L*.7)} ${P(L/2,0)} `;
+    else d+=`M${P(-L/2,0)} Q${P(-L/4,-L*.4)} ${P(0,0)} Q${P(L/4,L*.4)} ${P(L/2,0)} `;
+  }
+  confetti=alive;
+  confEl.setAttribute('d',d);
+}
+function pushTrail(){
+  const P=fig.P; if(!P) return;
+  fig.trail.push([(P.hip[0]+P.sh[0])/2,(P.hip[1]+P.sh[1])/2,T]); if(fig.trail.length>90) fig.trail.shift();
+  fig.trailA=1;
+}
+function drawFx(dt){
+  const u=Ly.u, P=fig.P;
+  fxG.setAttribute('stroke-width',(Ly.stroke*0.75).toFixed(2));
+  // dashed arc behind a thrown figure, fading once it comes to rest
+  if(!['fly','hop'].includes(fig.mode)) fig.trailA=Math.max(0,fig.trailA-dt*0.9);
+  // only a short curved swoosh just behind the flying figure, not the whole path
+  if(fig.mode==='fly'&&P&&fig.t>0.06){
+    const c=Ly.capH, vx=fig.vx, vy=fig.vy+fig.g*fig.t, n=Math.hypot(vx,vy)||1, dx=vx/n, dy=vy/n, px=-dy, py=dx;
+    const h=P.hip, a=[h[0]-dx*0.55*c+px*0.25*c, h[1]-dy*0.55*c+py*0.25*c], b=[a[0]-dx*0.8*c, a[1]-dy*0.8*c];
+    const m=[(a[0]+b[0])/2+px*0.12*c,(a[1]+b[1])/2+py*0.12*c];
+    trailEl.setAttribute('d',`M${f2(a)} Q${f2(m)} ${f2(b)}`);
+    trailEl.removeAttribute('stroke-dasharray');
+    trailEl.setAttribute('opacity','0.7');
+  } else trailEl.setAttribute('d','');
+  let sd='', md='', dd='';
+  if(fig.mode==='push'&&P){
+    const h=P.head, r=P.hr;
+    // strain: a small fan of ticks in front of the face (06 Strain)
+    const sa=smooth(0.72,0.95,fig.effort);
+    if(false){
+      // sweat flicks off the back of the head (never on top of it)
+      [-0.25,0.15,0.55].forEach((o,k)=>{
+        const fl=0.6+0.4*Math.sin(T*13+k*2.1);
+        const r1=r*1.35, r2=r1+(4+2*fl)*u*sa;
+        sd+=`M${f2([h[0]+Math.cos(o)*r1,h[1]-Math.sin(o)*r1])} L${f2([h[0]+Math.cos(o)*r2,h[1]-Math.sin(o)*r2])} `;
+      });
+    }
+    strainEl.setAttribute('opacity',sa.toFixed(3));
+    // motion squiggles trailing behind the head while it gains ground (04 / 07)
+    const ma=fig.adv;
+    if(ma>0.02){
+      [-3,3].forEach((dy,k)=>{
+        const x0=h[0]+r*1.5+k*2*u, y0=h[1]+dy*u, w=(7+3*Math.sin(T*9+k))*u;
+        md+=`M${f2([x0,y0])} q${(w/4).toFixed(2)} ${(-1.6*u).toFixed(2)} ${(w/2).toFixed(2)} 0 t${(w/2).toFixed(2)} 0 `;
+      });
+    }
+    motionEl.setAttribute('opacity',Math.min(1,ma*1.6).toFixed(3));
+    // grit kicked up behind the driving foot
+    const da=smooth(0.55,0.9,fig.effort);
+    if(da>0.01){
+      const ft=P.legs[0][1][0]>P.legs[1][1][0]?P.legs[0][1]:P.legs[1][1], g=Ly.ground;
+      const fl=0.5+0.5*Math.sin(T*17);
+      dd=`M${f2([ft[0]+3*u,g-1.5*u])} L${f2([ft[0]+(6+2*fl)*u,g-(3+2*fl)*u])} M${f2([ft[0]+5*u,g-0.4*u])} L${f2([ft[0]+(9+2*fl)*u,g-1*u])}`;
+    }
+    dustEl.setAttribute('opacity',(da*0.8).toFixed(3));
+  }
+  strainEl.setAttribute('d',sd); motionEl.setAttribute('d',md); dustEl.setAttribute('d',dd);
+  drawConfetti(dt);
+}
+
+/* ---------- colour: the screen heats to orange as the word is squeezed, turns green on release ---------- */
+const PAL={calm:{bg:[7,28,3],fg:[226,233,220]},hot:{bg:[235,70,38],fg:[250,231,206]},done:{bg:[7,28,3],fg:[152,226,96]}};
+const mix=(a,b,t)=>a.map((v,i)=>Math.round(v+(b[i]-v)*t));
+const hex=c=>'#'+c.map(v=>v.toString(16).padStart(2,'0')).join('');
+let lastCol='';
+function applyColors(){
+  let bg,fg;
+  if(S.phase==='release'||S.phase==='done'){
+    const k=S.phase==='done'?1:smooth(0,0.5,S.pt);
+    const h=S.heat??1;
+    const from={bg:mix(PAL.calm.bg,PAL.hot.bg,h),fg:mix(PAL.calm.fg,PAL.hot.fg,h)};
+    bg=mix(from.bg,PAL.done.bg,k); fg=mix(from.fg,PAL.done.fg,k);
+  } else {
+    const h=smooth(0.3,0.95,clamp(S.c,0,1)); S.heat=h;
+    bg=mix(PAL.calm.bg,PAL.hot.bg,h); fg=mix(PAL.calm.fg,PAL.hot.fg,h);
+  }
+  const key=hex(bg)+hex(fg);
+  if(key!==lastCol){lastCol=key; const r=document.documentElement.style; r.setProperty('--bg',hex(bg)); r.setProperty('--fg',hex(fg));}
+}
+
+/* ---------- render ---------- */
+function render(dt){
+  const G=geom();
+  const amp=S.J*Math.max(.5,Ly.capH*.016);
+  const wx=amp*noise(T,1), wy=amp*.5*noise(T,2);
+  G.rbx=amp*1.3*noise(T,3)+wx;
+  updateFig(dt,G);
+
+  applyColors();
+  floorEl.setAttribute('x2',Math.max(Ly.lineR,G.rbL-Ly.rp+Ly.ext).toFixed(2));
+  wordG.setAttribute('opacity',S.fade.toFixed(3));
+  wordG.setAttribute('transform',`translate(${wx.toFixed(2)} ${wy.toFixed(2)})`);
+  letters.forEach((el,i)=>{
+    const L=G.letters[i]; if(!L) return;
+    el.setAttribute('transform',`translate(${L.x.toFixed(2)} ${Ly.base.toFixed(2)}) scale(${Math.max(.001,L.s).toFixed(4)} 1)`);
+    el.setAttribute('fill-opacity','1');
+  });
+  {const st=Ly.stroke, bw=Ly.capH*0.22, top=Ly.base-Ly.capH*1.06, bot=Ly.base+Ly.capH*0.06;
+   const xl=G.ox+st/2, xr=G.rbR+G.rbx-st/2;
+   lb.setAttribute('d',`M${(xl+bw).toFixed(2)} ${top.toFixed(2)} H${xl.toFixed(2)} V${bot.toFixed(2)} H${(xl+bw).toFixed(2)}`);
+   rb.setAttribute('d',`M${(xr-bw).toFixed(2)} ${(top+wy).toFixed(2)} H${xr.toFixed(2)} V${(bot+wy).toFixed(2)} H${(xr-bw).toFixed(2)}`);}
+
+  if(!fig.P){figG.setAttribute('visibility','hidden');}
+  else{
+    figG.setAttribute('visibility','visible');
+    figG.setAttribute('opacity',S.phase==='rest'?S.fade.toFixed(3):'1');
+    figG.setAttribute('transform',`translate(0 ${(amp*.6*noise(T,5)).toFixed(2)})`);
+    drawFig(fig.P);
+  }
+  drawFx(dt);
+  updateStatus();
+}
+
+/* ---------- UI ---------- */
+let lastStatus='';
+function updateStatus(){
+  let s;
+  if(S.mode==='det'){
+    s={rest:'Ready',approach:'Approach',run:'Pushing',final:'Pushing',tension:'Hold',release:'Release',done:'Complete'}[S.phase];
+  } else {
+    s=S.phase==='run'?({push:'Pushing',struggle:'Straining',slip:'Losing ground',regroup:'Regrouping',backrest:'Leaning back',rest:'Catching breath',wipe:'Wiping brow',charge:'Run-up'}[S.ind.sub])
+      :({rest:'Ready',approach:'Approach',final:'Final push',tension:'Hold',release:'Release',done:'Complete'}[S.phase]);
+  }
+  if(s!==lastStatus){statusEl.textContent=s; lastStatus=s;}
+  const canComplete=S.mode==='ind'&&['rest','approach','run'].includes(S.phase)&&!S.completeReq;
+  if(btnDone.disabled===canComplete) btnDone.disabled=!canComplete;
+  const lock=['final','tension','release','done'].includes(S.phase);
+  if(range.disabled!==lock) range.disabled=lock;
+}
+function syncSlider(){range.value=Math.round(S.prog); out.textContent=String(Math.round(S.prog)).padStart(3,'0')+'%';}
+
+function replay(){
+  setWord('LOADING');
+  S.c=0;S.cv=0;S.ct=0;S.prog=0;S.auto=true;S.gen.seg=0;S.fade=0;S.completeReq=false;S.J=0;
+  syncSlider(); go('rest');
+  confetti=[]; fig.trail=[]; fig.trailA=0; fig.adv=0; fig.resume=false; fig.act=null; S.ind.pendingFinal=false;
+  const G=geom(), restX=restHipX(G);
+  if(fig.mode==='gone'||fig.mode==='fly'){ // it was thrown off screen: it walks back in from the right
+    fig.mode='stand'; fig.hipX=restX; fig.lean=.02; fig.squash=0; fig.bl=1; fig.P=null;
+  } else if(['lie','slide','hop'].includes(fig.mode)){ // get up where it landed, then walk back
+    blendFrom(0.45); fig.mode='stand'; fig.hipX=fig.P?fig.P.hip[0]:restX; fig.lean=.02; fig.squash=0.6;
+  } else if(fig.mode==='stand'&&fig.hipX>restX+1){ /* walks from where it stands */ }
+  else {fig.mode='stand'; fig.hipX=restX; fig.lean=.02; fig.squash=0; fig.bl=1;}
+  fig.prevContact=null;
+}
+function setMode(m){
+  S.mode=m;
+  btnDet.setAttribute('aria-pressed',m==='det'); btnInd.setAttribute('aria-pressed',m==='ind');
+  btnDone.hidden=true;
+  measure(); S.chain=chain(S.word);
+  replay();
+}
+btnReplay.addEventListener('click',replay);
+btnDet.addEventListener('click',()=>setMode('det'));
+btnInd.addEventListener('click',()=>setMode('ind'));
+btnDone.addEventListener('click',()=>{S.completeReq=true;});
+// indeterminate never finishes by itself: click or tap anywhere to trigger completion
+svg.addEventListener('click',()=>{ if(S.mode==='ind'&&['rest','approach','run'].includes(S.phase)) S.completeReq=true; });
+range.addEventListener('input',()=>{
+  if(!['rest','approach','run'].includes(S.phase)) return;
+  S.auto=false; S.prog=+range.value; syncSlider();
+});
+
+function onResize(){
+  measure(); S.chain=chain(S.word);
+  if(S.phase==='rest'&&fig.mode==='stand') fig.hipX=restHipX(geom());
+}
+addEventListener('resize',onResize);
+
+measure(); setWord('LOADING'); replay();
+if(document.fonts&&document.fonts.load) document.fonts.load('300 64px "BenchNine"').then(()=>{onResize(); if(S.phase==='rest') replay();}).catch(()=>{});
+
+let last=performance.now();
+function frame(now){
+  const dt=Math.min(0.05,Math.max(0,(now-last)/1000)); last=now; T+=dt;
+  step(dt); render(dt);
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(t=>{last=t;frame(t);});
+})();
+</script>
