@@ -2,7 +2,9 @@
 
 A progress indicator where a stick figure pushes the word **LOADING**. The letters get squeezed together from the right, and the screen shifts from green-black to orange as the pressure builds. At 100% the word springs open into **COMPLETE!**, the figure is thrown out of frame, and the palette turns green.
 
-Open `index.html` in a browser. It is one self-contained file: the BenchNine font is embedded and there are no dependencies.
+**Live demo:** https://dakotashao.github.io/push-loader/
+
+You can also open `index.html` directly in a browser. It is one self-contained file: the BenchNine font is embedded and there are no dependencies.
 
 ## Modes
 
